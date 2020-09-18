@@ -1,0 +1,16 @@
+# Built-In Super File Map.xua
+Super (
+           keyType : Type();
+         valueType : Type();
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    if (!is_array($_INPUT)) return false;
+    foreach ($_INPUT as $key => $value) {
+      if(!$keyType->accepts($key)) return false;
+      if(!$valueType->accepts($value)) return false;
+    }
+    return true;
+  %}
+}

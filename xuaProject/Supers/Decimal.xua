@@ -1,0 +1,12 @@
+# Built-In Super File Decimal.xua
+Super (
+  dollarsMaxLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+    centsMaxLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+          unsigned : Boolean() = FALSE;
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    return @TODO;
+  %};
+}

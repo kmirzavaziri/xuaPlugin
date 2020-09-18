@@ -1,0 +1,9 @@
+# Built-In Super File RawInteger.xua
+Super (
+          unsigned : Boolean() = FALSE;
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    return @TODO;
+  %};
+}

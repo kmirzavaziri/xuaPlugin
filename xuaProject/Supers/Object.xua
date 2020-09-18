@@ -1,0 +1,15 @@
+# Built-In Super File Object.xua
+Super (
+        parameters : Type();
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    if (!is_object($_INPUT)) return false;
+    foreach (get_object_vars($_INPUT) as $key => $value) {
+      if (!isset($parameters[$key])) return false;
+      if (!$parameters[$key]->accepts($value)) return false;
+    }
+    return true;
+  %}
+}

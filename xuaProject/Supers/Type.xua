@@ -1,0 +1,6 @@
+# Built-In Super File Type.xua
+Super () {
+  Criteria : Php {%
+    return is_subclass_of($_INPUT, '\XUA\Super', false);
+  %};
+}

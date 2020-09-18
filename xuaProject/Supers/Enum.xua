@@ -1,0 +1,9 @@
+# Built-In Super File Enum.xua
+Super (
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    return in_array($_INPUT, $values);
+  %}
+}

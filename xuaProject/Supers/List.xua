@@ -1,0 +1,20 @@
+# Built-In Super File List.xua
+Super (
+              type : Type();
+         minLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+         maxLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    if (!is_array($_INPUT)) return false;
+    if ($_INPUT != [] and array_keys($_INPUT) !== range(0, count($_INPUT) - 1)) return false;
+    $length = count($_INPUT);
+    if ($minLength !== null and $length < $minLength) return false;
+    if ($maxLength !== null and $length > $maxLength) return false;
+    foreach ($_INPUT as $item) {
+      if(!$type->accepts($item)) return false;
+    }
+    return true;
+  %};
+}

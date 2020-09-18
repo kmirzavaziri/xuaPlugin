@@ -1,0 +1,6 @@
+# Built-In Super File Dynamic.xua
+Super () {
+  Criteria : Php {%
+    return true;
+  %};
+}

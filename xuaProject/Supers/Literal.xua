@@ -1,0 +1,20 @@
+# Built-In Super File Literal.xua
+Super (
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+      if (!\XUA\Supers\Map([
+        'keyType' => String(),
+        'valueType' => String()
+      ])->accepts($_INPUT)) {
+        return false;
+      }
+      foreach ($strings as $language => $text) {
+          if (!in_array($language, XUA\Literal::VALID_LANGUAGES)) {
+            return false;
+          }
+      }
+      return true;
+  %}
+}

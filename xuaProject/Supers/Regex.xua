@@ -1,0 +1,13 @@
+# Built-In Super File Regex.xua
+Super (
+           pattern : String();
+          nullable : Boolean() = FALSE;
+) {
+  Validation : Php {%
+    return @preg_match($pattern, '') === FALSE ? 'Invalid pattern' : '';
+  %};
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    return preg_match($pattern, $_INPUT);
+  %};
+}

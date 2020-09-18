@@ -1,0 +1,15 @@
+# Built-In Super File String.xua
+Super (
+         minLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+         maxLength : RawInteger(unsigned = true; nullable = true;) = NULL;
+          nullable : Boolean() = FALSE;
+) {
+  Criteria : Php {%
+    if ($_INPUT === null) return $nullable;
+    if (!is_string($_INPUT)) return false;
+    $length = strlen($_INPUT);
+    if ($minLength !== null and $length < $minLength) return false;
+    if ($maxLength !== null and $length > $maxLength) return false;
+    return true;
+  %};
+}
