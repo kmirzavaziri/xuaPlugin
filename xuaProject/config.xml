@@ -1,0 +1,22 @@
+<xuaProject>
+    <name>XUA Project Template</name>
+
+    <copyright>The text provided here will be copied to header of all files of the generated PHP project.</copyright>
+
+    <indexHeader><![CDATA[
+        The text provided here will be copied to header of index.php as a comment section.
+    ]]></indexHeader>
+
+    <description><![CDATA[
+        The text provided here will be copied to Introduction section of Project documentation.
+    ]]></description>
+
+    <mysql
+            host="HOST"
+            username="root"
+            password=""
+            dbName="xua_project_template"
+            port=""
+            socket=""
+    />
+</xuaProject>
