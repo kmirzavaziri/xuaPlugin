@@ -1,0 +1,25 @@
+<idea-plugin>
+
+  <id>com.mirzavaziri.kamyar.xua.intellij.plugin</id>
+  <name>XUA Editor</name>
+  <version>1.0</version>
+  <vendor email="kmirzavaziri@gmail.com" url="http://kamyar.mirzavaziri.com">Mirzavaziri</vendor>
+
+  <description><![CDATA[
+      This plugin allows you to open, edit, and save .XUA files of Xuarazmi API generator.
+    ]]></description>
+
+  <change-notes><![CDATA[
+    This is the very First Edition... So... :)
+  ]]></change-notes>
+
+  <idea-version since-build="182.0"/>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="XUA File" implementationClass="org.intellij.sdk.language.XuaFileType" fieldName="INSTANCE" language="XUA" extensions="xua"/>
+  </extensions>
+
+</idea-plugin>
