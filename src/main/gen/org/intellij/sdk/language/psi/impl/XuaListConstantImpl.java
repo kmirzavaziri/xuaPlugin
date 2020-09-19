@@ -26,4 +26,10 @@ public class XuaListConstantImpl extends ASTWrapperPsiElement implements XuaList
     else super.accept(visitor);
   }
 
+  @Override
+  @NotNull
+  public List<XuaExpression> getExpressionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, XuaExpression.class);
+  }
+
 }

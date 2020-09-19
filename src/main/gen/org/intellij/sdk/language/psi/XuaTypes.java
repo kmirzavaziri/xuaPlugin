@@ -10,44 +10,35 @@ public interface XuaTypes {
 
   IElementType CONSTANT_BLOCK = new XuaElementType("CONSTANT_BLOCK");
   IElementType ENTITY_BLOCK = new XuaElementType("ENTITY_BLOCK");
-  IElementType ERROR_BLOCK = new XuaElementType("ERROR_BLOCK");
   IElementType EXPRESSION = new XuaElementType("EXPRESSION");
   IElementType LIST_CONSTANT = new XuaElementType("LIST_CONSTANT");
-  IElementType LITERAL_BLOCK = new XuaElementType("LITERAL_BLOCK");
+  IElementType MAP_CONSTANT = new XuaElementType("MAP_CONSTANT");
   IElementType METHOD_BLOCK = new XuaElementType("METHOD_BLOCK");
   IElementType NUMERIC_CONSTANT = new XuaElementType("NUMERIC_CONSTANT");
-  IElementType PARAMETERS_BLOCK = new XuaElementType("PARAMETERS_BLOCK");
-  IElementType PHP_BLOCK = new XuaElementType("PHP_BLOCK");
-  IElementType TYPE_BLOCK = new XuaElementType("TYPE_BLOCK");
+  IElementType OBJECT_CONSTANT = new XuaElementType("OBJECT_CONSTANT");
+  IElementType SUPER_BLOCK = new XuaElementType("SUPER_BLOCK");
 
-  IElementType ADDITIONAL = new XuaTokenType("Additional");
-  IElementType BINCONSTANT = new XuaTokenType("BinConstant");
-  IElementType BODY = new XuaTokenType("Body");
-  IElementType CONSTANT = new XuaTokenType("Constant");
-  IElementType CRITERIA = new XuaTokenType("Criteria");
-  IElementType DECCONSTANT = new XuaTokenType("DecConstant");
-  IElementType ENTITY = new XuaTokenType("Entity");
+  IElementType BIN_CONSTANT = new XuaTokenType("BIN_CONSTANT");
+  IElementType BODY = new XuaTokenType("BODY");
+  IElementType CRITERIA = new XuaTokenType("CRITERIA");
+  IElementType DEC_CONSTANT = new XuaTokenType("DEC_CONSTANT");
+  IElementType ENTITY = new XuaTokenType("ENTITY");
   IElementType FALSE = new XuaTokenType("FALSE");
-  IElementType FIELDS = new XuaTokenType("Fields");
-  IElementType HEXCONSTANT = new XuaTokenType("HexConstant");
-  IElementType LANGUAGECODE = new XuaTokenType("LanguageCode");
-  IElementType LITERAL = new XuaTokenType("Literal");
-  IElementType MAPCONSTANT = new XuaTokenType("MapConstant");
-  IElementType MEANS = new XuaTokenType("Means");
-  IElementType METHOD = new XuaTokenType("Method");
+  IElementType FIELDS = new XuaTokenType("FIELDS");
+  IElementType HEX_CONSTANT = new XuaTokenType("HEX_CONSTANT");
+  IElementType LANGUAGE_CODE = new XuaTokenType("LANGUAGE_CODE");
+  IElementType LITERAL = new XuaTokenType("LITERAL");
+  IElementType METHOD = new XuaTokenType("METHOD");
   IElementType NULL = new XuaTokenType("NULL");
-  IElementType NUMBERSIGN = new XuaTokenType("NumberSign");
-  IElementType OBJECTCONSTANT = new XuaTokenType("ObjectConstant");
-  IElementType OCTCONSTANT = new XuaTokenType("OctConstant");
-  IElementType PARAMETERS = new XuaTokenType("Parameters");
-  IElementType PHP = new XuaTokenType("Php");
-  IElementType PHPCODE = new XuaTokenType("PhpCode");
-  IElementType REQUEST = new XuaTokenType("Request");
-  IElementType RESPONSE = new XuaTokenType("Response");
-  IElementType STRINGCONSTANT = new XuaTokenType("StringConstant");
-  IElementType SYMBOL = new XuaTokenType("Symbol");
+  IElementType OCT_CONSTANT = new XuaTokenType("OCT_CONSTANT");
+  IElementType PHP_CODE = new XuaTokenType("PHP_CODE");
+  IElementType REQUEST = new XuaTokenType("REQUEST");
+  IElementType RESPONSE = new XuaTokenType("RESPONSE");
+  IElementType STRING_CONSTANT = new XuaTokenType("STRING_CONSTANT");
+  IElementType SUPER = new XuaTokenType("SUPER");
+  IElementType SYMBOL = new XuaTokenType("SYMBOL");
   IElementType TRUE = new XuaTokenType("TRUE");
-  IElementType TYPE = new XuaTokenType("Type");
+  IElementType VALIDATION = new XuaTokenType("VALIDATION");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
@@ -58,17 +49,14 @@ public interface XuaTypes {
       else if (type == ENTITY_BLOCK) {
         return new XuaEntityBlockImpl(node);
       }
-      else if (type == ERROR_BLOCK) {
-        return new XuaErrorBlockImpl(node);
-      }
       else if (type == EXPRESSION) {
         return new XuaExpressionImpl(node);
       }
       else if (type == LIST_CONSTANT) {
         return new XuaListConstantImpl(node);
       }
-      else if (type == LITERAL_BLOCK) {
-        return new XuaLiteralBlockImpl(node);
+      else if (type == MAP_CONSTANT) {
+        return new XuaMapConstantImpl(node);
       }
       else if (type == METHOD_BLOCK) {
         return new XuaMethodBlockImpl(node);
@@ -76,14 +64,11 @@ public interface XuaTypes {
       else if (type == NUMERIC_CONSTANT) {
         return new XuaNumericConstantImpl(node);
       }
-      else if (type == PARAMETERS_BLOCK) {
-        return new XuaParametersBlockImpl(node);
+      else if (type == OBJECT_CONSTANT) {
+        return new XuaObjectConstantImpl(node);
       }
-      else if (type == PHP_BLOCK) {
-        return new XuaPhpBlockImpl(node);
-      }
-      else if (type == TYPE_BLOCK) {
-        return new XuaTypeBlockImpl(node);
+      else if (type == SUPER_BLOCK) {
+        return new XuaSuperBlockImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);
     }

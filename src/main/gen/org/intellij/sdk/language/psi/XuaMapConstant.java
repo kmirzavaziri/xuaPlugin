@@ -5,7 +5,7 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface XuaMethodBlock extends PsiElement {
+public interface XuaMapConstant extends PsiElement {
 
   @NotNull
   List<XuaExpression> getExpressionList();

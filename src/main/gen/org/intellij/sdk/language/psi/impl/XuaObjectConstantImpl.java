@@ -11,14 +11,14 @@ import static org.intellij.sdk.language.psi.XuaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import org.intellij.sdk.language.psi.*;
 
-public class XuaMethodBlockImpl extends ASTWrapperPsiElement implements XuaMethodBlock {
+public class XuaObjectConstantImpl extends ASTWrapperPsiElement implements XuaObjectConstant {
 
-  public XuaMethodBlockImpl(@NotNull ASTNode node) {
+  public XuaObjectConstantImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull XuaVisitor visitor) {
-    visitor.visitMethodBlock(this);
+    visitor.visitObjectConstant(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {

@@ -7,4 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface XuaListConstant extends PsiElement {
 
+  @NotNull
+  List<XuaExpression> getExpressionList();
+
 }

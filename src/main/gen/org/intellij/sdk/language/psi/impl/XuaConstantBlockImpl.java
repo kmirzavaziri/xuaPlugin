@@ -32,10 +32,4 @@ public class XuaConstantBlockImpl extends ASTWrapperPsiElement implements XuaCon
     return findNotNullChildByClass(XuaExpression.class);
   }
 
-  @Override
-  @NotNull
-  public PsiElement getSymbol() {
-    return findNotNullChildByType(SYMBOL);
-  }
-
 }

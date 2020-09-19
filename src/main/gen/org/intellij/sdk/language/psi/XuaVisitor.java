@@ -15,10 +15,6 @@ public class XuaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitErrorBlock(@NotNull XuaErrorBlock o) {
-    visitPsiElement(o);
-  }
-
   public void visitExpression(@NotNull XuaExpression o) {
     visitPsiElement(o);
   }
@@ -27,7 +23,7 @@ public class XuaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitLiteralBlock(@NotNull XuaLiteralBlock o) {
+  public void visitMapConstant(@NotNull XuaMapConstant o) {
     visitPsiElement(o);
   }
 
@@ -39,15 +35,11 @@ public class XuaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitParametersBlock(@NotNull XuaParametersBlock o) {
+  public void visitObjectConstant(@NotNull XuaObjectConstant o) {
     visitPsiElement(o);
   }
 
-  public void visitPhpBlock(@NotNull XuaPhpBlock o) {
-    visitPsiElement(o);
-  }
-
-  public void visitTypeBlock(@NotNull XuaTypeBlock o) {
+  public void visitSuperBlock(@NotNull XuaSuperBlock o) {
     visitPsiElement(o);
   }
 

@@ -28,14 +28,8 @@ public class XuaEntityBlockImpl extends ASTWrapperPsiElement implements XuaEntit
 
   @Override
   @NotNull
-  public XuaParametersBlock getParametersBlock() {
-    return findNotNullChildByClass(XuaParametersBlock.class);
-  }
-
-  @Override
-  @NotNull
-  public XuaPhpBlock getPhpBlock() {
-    return findNotNullChildByClass(XuaPhpBlock.class);
+  public XuaExpression getExpression() {
+    return findNotNullChildByClass(XuaExpression.class);
   }
 
 }

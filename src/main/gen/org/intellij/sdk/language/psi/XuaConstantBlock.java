@@ -10,7 +10,4 @@ public interface XuaConstantBlock extends PsiElement {
   @NotNull
   XuaExpression getExpression();
 
-  @NotNull
-  PsiElement getSymbol();
-
 }

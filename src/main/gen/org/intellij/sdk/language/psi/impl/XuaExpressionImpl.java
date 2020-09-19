@@ -40,20 +40,20 @@ public class XuaExpressionImpl extends ASTWrapperPsiElement implements XuaExpres
 
   @Override
   @Nullable
+  public XuaMapConstant getMapConstant() {
+    return findChildByClass(XuaMapConstant.class);
+  }
+
+  @Override
+  @Nullable
   public XuaNumericConstant getNumericConstant() {
     return findChildByClass(XuaNumericConstant.class);
   }
 
   @Override
   @Nullable
-  public PsiElement getStringConstant() {
-    return findChildByType(STRINGCONSTANT);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getSymbol() {
-    return findChildByType(SYMBOL);
+  public XuaObjectConstant getObjectConstant() {
+    return findChildByClass(XuaObjectConstant.class);
   }
 
 }

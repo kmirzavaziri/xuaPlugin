@@ -14,12 +14,12 @@ public interface XuaExpression extends PsiElement {
   XuaListConstant getListConstant();
 
   @Nullable
+  XuaMapConstant getMapConstant();
+
+  @Nullable
   XuaNumericConstant getNumericConstant();
 
   @Nullable
-  PsiElement getStringConstant();
-
-  @Nullable
-  PsiElement getSymbol();
+  XuaObjectConstant getObjectConstant();
 
 }

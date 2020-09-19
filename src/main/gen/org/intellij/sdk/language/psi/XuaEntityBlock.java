@@ -8,9 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface XuaEntityBlock extends PsiElement {
 
   @NotNull
-  XuaParametersBlock getParametersBlock();
-
-  @NotNull
-  XuaPhpBlock getPhpBlock();
+  XuaExpression getExpression();
 
 }

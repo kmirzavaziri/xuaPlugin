@@ -26,28 +26,4 @@ public class XuaNumericConstantImpl extends ASTWrapperPsiElement implements XuaN
     else super.accept(visitor);
   }
 
-  @Override
-  @Nullable
-  public PsiElement getBinConstant() {
-    return findChildByType(BINCONSTANT);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getDecConstant() {
-    return findChildByType(DECCONSTANT);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getHexConstant() {
-    return findChildByType(HEXCONSTANT);
-  }
-
-  @Override
-  @Nullable
-  public PsiElement getOctConstant() {
-    return findChildByType(OCTCONSTANT);
-  }
-
 }

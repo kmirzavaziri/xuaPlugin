@@ -7,16 +7,4 @@ import com.intellij.psi.PsiElement;
 
 public interface XuaNumericConstant extends PsiElement {
 
-  @Nullable
-  PsiElement getBinConstant();
-
-  @Nullable
-  PsiElement getDecConstant();
-
-  @Nullable
-  PsiElement getHexConstant();
-
-  @Nullable
-  PsiElement getOctConstant();
-
 }
