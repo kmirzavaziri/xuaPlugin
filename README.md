@@ -13,7 +13,9 @@ First of all you need to meet prerequisites.
 ### Installing IDE
 Install an IntelliJ-based IDE. We recommend installing IDEA Community Edition (since it's free), using the following command.
 
+```
 $ sudo snap install intellij-idea-community --classic --edge
+```
 
 ### Installing XUA Plugin and dependencies
 Install the XUA Editor Plugin @TODO
