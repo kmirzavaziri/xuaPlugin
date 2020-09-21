@@ -5,7 +5,7 @@ Super (
          maxLength : RawInteger(unsigned = true; nullable = true;) = NULL;
           nullable : Boolean() = FALSE;
 ) {
-  Criteria : Php {%
+  Criteria : <?php
     if ($_INPUT === null) return $nullable;
     if (!is_array($_INPUT)) return false;
     if ($_INPUT != [] and array_keys($_INPUT) !== range(0, count($_INPUT) - 1)) return false;
@@ -16,5 +16,5 @@ Super (
       if(!$type->accepts($item)) return false;
     }
     return true;
-  %};
+  ?>
 }

@@ -4,7 +4,7 @@ Super (
          valueType : Type();
           nullable : Boolean() = FALSE;
 ) {
-  Criteria : Php {%
+  Criteria : <?php
     if ($_INPUT === null) return $nullable;
     if (!is_array($_INPUT)) return false;
     foreach ($_INPUT as $key => $value) {
@@ -12,5 +12,5 @@ Super (
       if(!$valueType->accepts($value)) return false;
     }
     return true;
-  %}
+  ?>
 }

@@ -2,7 +2,7 @@
 Super (
           nullable : Boolean() = FALSE;
 ) {
-  Criteria : Php {%
+  Criteria : <?php
     if ($_INPUT === null) return $nullable;
       if (!\XUA\Supers\Map([
         'keyType' => String(),
@@ -16,5 +16,5 @@ Super (
           }
       }
       return true;
-  %}
+  ?>
 }

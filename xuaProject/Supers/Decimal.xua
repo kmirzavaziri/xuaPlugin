@@ -5,8 +5,8 @@ Super (
           unsigned : Boolean() = FALSE;
           nullable : Boolean() = FALSE;
 ) {
-  Criteria : Php {%
+  Criteria : <?php
     if ($_INPUT === null) return $nullable;
     return @TODO;
-  %};
+  ?>
 }

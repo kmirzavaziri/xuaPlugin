@@ -3,11 +3,11 @@ Super (
            pattern : String();
           nullable : Boolean() = FALSE;
 ) {
-  Validation : Php {%
+  Validation : <?php
     return @preg_match($pattern, '') === FALSE ? 'Invalid pattern' : '';
-  %};
-  Criteria : Php {%
+  ?>
+  Criteria : <?php
     if ($_INPUT === null) return $nullable;
     return preg_match($pattern, $_INPUT);
-  %};
+  ?>
 }

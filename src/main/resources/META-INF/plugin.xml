@@ -20,6 +20,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <fileType name="XUA File" implementationClass="org.intellij.sdk.language.XuaFileType" fieldName="INSTANCE" language="XUA" extensions="xua"/>
+    <lang.parserDefinition language="XUA" implementationClass="org.intellij.sdk.language.XuaParserDefinition"/>
   </extensions>
 
 </idea-plugin>

@@ -12,35 +12,39 @@
   elementTypeClass="org.intellij.sdk.language.psi.XuaElementType"
   tokenTypeClass="org.intellij.sdk.language.psi.XuaTokenType"
 
+    tokens = [
+                    COMMENT = "COMMENT"
+    ]
+
   psiImplUtilClass="org.intellij.sdk.language.psi.impl.XuaPsiImplUtil"
 }
                   XuaFile ::= ConstantBlock+
                             | SuperBlock
                             | MethodBlock
-                            | EntityBlock
-               SuperBlock ::= SUPER '(' ( SYMBOL ':' Expression ['=' Expression] ';')* ')' '{' VALIDATION ':' Expression CRITERIA ':' Expression '}'
-            ConstantBlock ::= SYMBOL '=' Expression;
+//                            | EntityBlock
+               SuperBlock ::= SUPER '(' ( SYMBOL ':' Expression ['=' Expression] ';')* ')' '{' [VALIDATION ':' Expression] CRITERIA ':' Expression '}'
+            ConstantBlock ::= SYMBOL '=' Expression ';'
               MethodBlock ::= METHOD '{' REQUEST ':' Expression RESPONSE ':' Expression BODY ':' Expression '}'
-              EntityBlock ::= ENTITY '{' FIELDS ':' Expression '}'
+//              EntityBlock ::= ENTITY '{' FIELDS ':' Expression '}'
 
-               Expression ::= SYMBOL
-                            | LITERAL '{' ( LANGUAGE_CODE ':' STRING_CONSTANT ';' )* '}'
-                            | '{%' PHP_CODE '%}'
+               Expression ::= LITERAL '{' ( LANGUAGE_CODE ':' STRING_CONSTANT ';' )* '}'
+                            | PHP_BLOCK
                             | SYMBOL '(' (SYMBOL '=' Expression ';')* ')'
+                            | SYMBOL
                             | '(' Expression ')'
-                            | Expression '|' Expression
-                            | Expression '&' Expression
+//                            | Expression '|' Expression
+//                            | Expression '&' Expression
                             | '!' Expression
                             | NumericConstant
-                            | Expression '+' Expression
-                            | Expression '-' Expression
-                            | Expression '*' Expression
-                            | Expression '/' Expression
+//                            | Expression '+' Expression
+//                            | Expression '-' Expression
+//                            | Expression '*' Expression
+//                            | Expression '/' Expression
                             | '+' Expression
                             | '-' Expression
-                            | ObjectConstant
-                            | MapConstant
-                            | ListConstant
+//                            | '[' (Expression ';')* ']'
+//                            | '[' (Expression '=>' Expression ';')* ']'
+//                            | '{' (Expression '=>' Expression ';')* '}'
                             | STRING_CONSTANT
                             | TRUE
                             | FALSE
@@ -49,6 +53,3 @@
                             | OCT_CONSTANT
                             | DEC_CONSTANT
                             | HEX_CONSTANT
-             ListConstant ::= '[' (Expression ';')* ']'
-              MapConstant ::= '[' (Expression '=>' Expression ';')* ']'
-           ObjectConstant ::= '{' (Expression '=>' Expression ';')* '}'

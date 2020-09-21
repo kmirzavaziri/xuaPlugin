@@ -1,6 +1,6 @@
 # Built-In Super File Boolean.xua
 Super () {
-  Criteria : Php {%
+  Criteria : <?php
     return $_INPUT === true || $_INPUT === false;
-  %};
+  ?>
 }

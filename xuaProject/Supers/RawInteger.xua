@@ -3,7 +3,7 @@ Super (
           unsigned : Boolean() = FALSE;
           nullable : Boolean() = FALSE;
 ) {
-  Criteria : Php {%
+  Criteria : <?php
     return @TODO;
-  %};
+  ?>
 }
