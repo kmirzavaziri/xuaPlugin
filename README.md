@@ -17,6 +17,15 @@ Install an IntelliJ-based IDE. We recommend installing IDEA Community Edition (s
 $ sudo snap install intellij-idea-community --classic --edge
 ```
 
+### Cloning XUA Plugin due to development
+First of all you must have a copy of project on your device.(It does not matter which way you use, although using .zip make somethings easier.)
+
+Befor doing anything else, make sure that the bundled **_Plugin DevKit_** plugin is enabled. Install and enable [**_Grammar-Kit_**](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [**_PsiViewer plugins_**](https://plugins.jetbrains.com/plugin/227-psiviewer).
+
+If this your first intellij plugin, perhaps you have none of **_Gradle_** libraries and packages. So do as follows:
+
+After you open up this project on your IDE you will see a warning(or an alert) which will guide you to donwload and install related packges.(Downloading and installing will be auto by IDE itself, **you don't have to anything by hand except accepting your IDE suggestions**, just connect to internet and if you are under limitiations caused by sanctions also connect your VPN, this process will take some times to be done and download something about 15 Gigabyte data, be patient.
+
 ### Installing XUA Plugin and dependencies
 Install the XUA Editor Plugin @TODO
 
